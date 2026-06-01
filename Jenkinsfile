@@ -1,4 +1,4 @@
-@Library('vault-shared-library') _
+@Library('grafana/prometheus-shared-library') _
 
 pipeline {
 
@@ -14,7 +14,7 @@ pipeline {
 
                     def props = readProperties file: 'config.properties'
 
-                    vaultPipeline(props)
+                    grafana/prometheus(props)
                 }
             }
         }
