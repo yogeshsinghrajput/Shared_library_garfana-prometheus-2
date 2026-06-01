@@ -1,6 +1,15 @@
 ---
-- hosts: linux
-  become: true
+
+- name: Install Prometheus
+  hosts: prometheus
+  become: yes
 
   roles:
-    - vault_role
+    - prometheus
+
+- name: Install Grafana
+  hosts: grafana
+  become: yes
+
+  roles:
+    - grafana
